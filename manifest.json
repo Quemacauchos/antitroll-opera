@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+
+    "name"       : "Antitroll",
+    "version"    : "1.0",
+    "description": "Fight trolls in bulletin boards",
+
+    "permissions": [
+        "tabs"
+    ],
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "page_action": {
+        "default_icon" : "icon.png",
+        "default_title": "Antitroll",
+        "default_popup": "trollbox.html"
+    },
+
+    "content_scripts": [{
+        "matches": [
+            "http://noticierodigital.com/forum/viewforum.php?f=*",
+            "http://noticierodigital.com/forum/viewtopic.php?t=*",
+            "http://www.noticierodigital.com/forum/viewforum.php?f=*",
+            "http://www.noticierodigital.com/forum/viewtopic.php?t=*"
+        ],
+        "css": ["antitroll.css"],
+        "js" : ["antitroll.js"]
+    }]
+
+}
